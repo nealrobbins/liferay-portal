@@ -15,10 +15,23 @@
 package com.liferay.user.associated.data.component;
 
 /**
+ * The base interface for the UAD framework. Do not implement this interface
+ * directly.
+ *
  * @author Drew Brokke
+ * @param <T> the type of entity to be anonymized, deleted, edited, exported, or
+ *        displayed. Also used as an identifier for grouping the various
+ *        components
+ * @see com.liferay.user.associated.data.anonymizer.UADAnonymizer
+ * @see com.liferay.user.associated.data.display.UADDisplay
+ * @see com.liferay.user.associated.data.exporter.UADExporter
+ * @review
  */
 public interface UADComponent<T> {
 
+	/**
+	 * @return the identifying class of type {@code T}
+	 */
 	public Class<T> getTypeClass();
 
 }
