@@ -49,6 +49,7 @@ import java.util.Set;
  *
  * @author Pei-Jung Lan
  * @author Drew Brokke
+ * @review
  */
 public abstract class BaseModelUADDisplay<T extends BaseModel>
 	implements UADDisplay<T> {
@@ -113,6 +114,7 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	 *
 	 * @param dynamicQuery the dynamicQuery to be passed to the service layer
 	 * @return
+	 * @review
 	 */
 	protected abstract long doCount(DynamicQuery dynamicQuery);
 
@@ -121,6 +123,7 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	 * {@code T}.
 	 *
 	 * @return a new {@link DynamicQuery} to be used by the service layer
+	 * @review
 	 */
 	protected abstract DynamicQuery doGetDynamicQuery();
 
@@ -132,6 +135,7 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	 * @param start the starting index of the result set, for pagination
 	 * @param end the ending index of the result set, for pagination
 	 * @return a paginated list of entities related to the userId
+	 * @review
 	 */
 	protected abstract List<T> doGetRange(
 		DynamicQuery dynamicQuery, int start, int end);
@@ -141,6 +145,7 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	 * {@code T} that contain a userId.
 	 *
 	 * @return an array of strings identifying fields that may contain a userId
+	 * @review
 	 */
 	protected abstract String[] doGetUserIdFieldNames();
 
@@ -150,6 +155,7 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	 *
 	 * @param userId the userId to pre-filter the {@link DynamicQuery}
 	 * @return a pre-filtered {@link DynamicQuery}
+	 * @review
 	 */
 	protected DynamicQuery getDynamicQuery(long userId) {
 		return UADDynamicQueryUtil.addDynamicQueryCriteria(
