@@ -109,8 +109,8 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	}
 
 	/**
-	 * Returns the number of entities of type {@code T} associated with the
-	 * given userId using a {@link DynamicQuery}.
+	 * Returns the number of entities of type {@code T} associated with a user
+	 * using a {@link DynamicQuery}.
 	 *
 	 * @param dynamicQuery the dynamicQuery to be passed to the service layer
 	 * @return
@@ -134,7 +134,7 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	 * @param dynamicQuery the dynamicQuery to be passed to the service layer
 	 * @param start the starting index of the result set, for pagination
 	 * @param end the ending index of the result set, for pagination
-	 * @return a paginated list of entities related to the userId
+	 * @return a paginated list of entities of entities of type {@code T}
 	 * @review
 	 */
 	protected abstract List<T> doGetRange(
@@ -142,9 +142,9 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 
 	/**
 	 * Returns names identifying fields on the entity of type {@code T}
-	 * that contain a userId.
+	 * that contain the primary key of a user.
 	 *
-	 * @return fields that may contain a userId
+	 * @return fields that may contain the primary key of a user
 	 * @review
 	 */
 	protected abstract String[] doGetUserIdFieldNames();
@@ -153,7 +153,8 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	 * Returns a {@link DynamicQuery} for type {@code T}. It should be populated
 	 * with criterion and ready for use by the service.
 	 *
-	 * @param userId the userId to pre-filter the {@link DynamicQuery}
+	 * @param userId the the primary key of a user used to pre-filter the
+	 * 				 {@link DynamicQuery}
 	 * @return a pre-filtered {@link DynamicQuery}
 	 * @review
 	 */

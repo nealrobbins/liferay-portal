@@ -35,12 +35,12 @@ public interface UADAnonymizer<T> extends UADComponent<T> {
 
 	/**
 	 * Anonymizes the given entity and persists the changes to the database. The
-	 * userId is used to match against different fields on the given entity. The
-	 * anonymous user is given to provide replacement user-related data, if
-	 * needed.
+	 * primary key of the user is used to match against different fields on the
+	 * given entity. The anonymous user is given to provide replacement
+	 * user-related data, if needed.
 	 *
 	 * @param t the entity to be anonymized
-	 * @param userId the userId of the User associated with type {@code T}
+	 * @param userId the primary key of the user associated with type {@code T}
 	 * @param anonymousUser the company's anonymous user
 	 * @throws PortalException if the persistence throws an exception
 	 * @review
@@ -50,10 +50,10 @@ public interface UADAnonymizer<T> extends UADComponent<T> {
 
 	/**
 	 * Will perform anonymization on all entities of type {@code T} related
-	 * to the given userId. This method is responsible to retrieve all the
-	 * relevant entities, perform anonymization, and persist the changes.
+	 * to a user. This method is responsible to retrieve all the relevant
+	 * entities, perform anonymization, and persist the changes.
 	 *
-	 * @param userId the userId of the User whose data is being anonymized
+	 * @param userId the primary key of the user whose data is being anonymized
 	 * @param anonymousUser the company's anonymous user
 	 * @throws PortalException if the persistence throws an exception
 	 * @review
@@ -62,11 +62,10 @@ public interface UADAnonymizer<T> extends UADComponent<T> {
 		throws PortalException;
 
 	/**
-	 * Returns the number of entities of type {@code T} associated with the
-	 * given userId.
+	 * Returns the number of entities of type {@code T} associated with a user.
 	 *
-	 * @param userId the userId whose data to count
-	 * @return the number of entities associated with the userId
+	 * @param userId the primary key of the user whose data to count
+	 * @return the number of entities associated with the user
 	 * @review
 	 */
 	public long count(long userId) throws PortalException;
@@ -82,9 +81,9 @@ public interface UADAnonymizer<T> extends UADComponent<T> {
 
 	/**
 	 * Deletes from the database all the entities of type {@code T} related to
-	 * the given userId.
+	 * a user.
 	 *
-	 * @param userId the userId whose data to delete
+	 * @param userId the primary key of the user whose data to delete
 	 * @throws PortalException
 	 * @review
 	 */

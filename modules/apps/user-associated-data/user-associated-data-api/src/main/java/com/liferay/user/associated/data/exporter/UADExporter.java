@@ -32,11 +32,10 @@ import java.io.File;
 public interface UADExporter<T> extends UADComponent<T> {
 
 	/**
-	 * Returns the number of entities of type {@code T} associated with the
-	 * given userId.
+	 * Returns the number of entities of type {@code T} associated with a user.
 	 *
-	 * @param userId the userId whose data to count
-	 * @return the number of entities associated with the userId
+	 * @param userId the primary key of the user whose data to count
+	 * @return the number of entities associated with the user
 	 * @review
 	 */
 	public long count(long userId) throws PortalException;
@@ -56,7 +55,7 @@ public interface UADExporter<T> extends UADComponent<T> {
 	 * Returns a file object containing the data from all entities of type
 	 * {@code T} related to a user.
 	 *
-	 * @param userId whose data to export
+	 * @param userId the primary key of the user whose data to export
 	 * @return a {@link File} object containing the exported data
 	 * @throws PortalException
 	 * @review
