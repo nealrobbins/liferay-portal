@@ -14,6 +14,7 @@
 
 package com.liferay.user.associated.data.display;
 
+import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.portlet.LiferayPortletRequest;
 import com.liferay.portal.kernel.portlet.LiferayPortletResponse;
 import com.liferay.user.associated.data.component.UADComponent;
@@ -35,8 +36,8 @@ import java.util.Map;
 public interface UADDisplay<T> extends UADComponent<T> {
 
 	/**
-	 * Returns a count of the number of entities of type {@code T} associated
-	 * with the given userId.
+	 * Returns the number of entities of type {@code T} associated with the
+	 * given userId.
 	 *
 	 * @param userId the userId whose data to count
 	 * @return the number of entities associated with the userId
@@ -45,7 +46,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	public long count(long userId);
 
 	/**
-	 * Retrieves an entity of type {@code T}
+	 * Retrieves an entity of type {@code T}.
 	 *
 	 * @param primaryKey the primaryKey of the entity to retrieve
 	 * @return an entity of type {@code T}
@@ -55,10 +56,10 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	public T get(Serializable primaryKey) throws Exception;
 
 	/**
-	 * Returns an array of strings defining the field names to be used as table
-	 * column headers when displaying a list of entities of type {@code T}
+	 * Returns field names to be used as table column headers when displaying a
+	 * list of entities of type {@code T}.
 	 *
-	 * @return an array of field names used for column headers
+	 * @return field names used for column headers
 	 * @review
 	 */
 	public default String[] getColumnFieldNames() {
@@ -66,10 +67,10 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	}
 
 	/**
-	 * Returns an array of strings defining the names of fields to display
-	 * when showing details about an entity of type {@code T}
+	 * Returns names of fields to display when showing details about an entity
+	 * of type {@code T}.
 	 *
-	 * @return an array of field names identifying which information to display
+	 * @return field names identifying which information to display
 	 * @review
 	 */
 	public String[] getDisplayFieldNames();
@@ -105,8 +106,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	public Map<String, Object> getFieldValues(T t, String[] fieldNames);
 
 	/**
-	 * Returns the value representing the primary key of the entity of type
-	 * {@code T}
+	 * Returns the primary key of the entity of type {@code T}.
 	 *
 	 * @param t the entity to retrieve the primary key for
 	 * @return the primary key of the entity
@@ -115,13 +115,12 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	public Serializable getPrimaryKey(T t);
 
 	/**
-	 * Returns a paginated list of entities of type {@code T} associated with a
+	 * Returns entities of type {@code T} in the given range associated with a
 	 * user.
 	 *
-	 * @param userId the userId whose data to get
 	 * @param start the starting index of the result set, for pagination
 	 * @param end the ending index of the result set, for pagination
-	 * @return a paginated list of entities related to the userId
+	 * @return paginated entities related to the userId
 	 * @review
 	 */
 	public List<T> getRange(long userId, int start, int end);
