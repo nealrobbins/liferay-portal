@@ -14,7 +14,6 @@
 
 package com.liferay.user.associated.data.display;
 
-import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.portlet.LiferayPortletRequest;
 import com.liferay.portal.kernel.portlet.LiferayPortletResponse;
 import com.liferay.user.associated.data.component.UADComponent;
@@ -37,10 +36,10 @@ public interface UADDisplay<T> extends UADComponent<T> {
 
 	/**
 	 * Returns the number of entities of type {@code T} associated with the
-	 * given userId.
+	 * a user.
 	 *
-	 * @param userId the userId whose data to count
-	 * @return the number of entities associated with the userId
+	 * @param userId the primary key of the user whose data to count
+	 * @return the number of entities associated with the user
 	 * @review
 	 */
 	public long count(long userId);
@@ -48,7 +47,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	/**
 	 * Retrieves an entity of type {@code T}.
 	 *
-	 * @param primaryKey the primaryKey of the entity to retrieve
+	 * @param primaryKey the primary key of the entity to retrieve
 	 * @return an entity of type {@code T}
 	 * @throws Exception
 	 * @review
@@ -120,7 +119,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 *
 	 * @param start the starting index of the result set, for pagination
 	 * @param end the ending index of the result set, for pagination
-	 * @return paginated entities related to the userId
+	 * @return paginated entities related to the user ID
 	 * @review
 	 */
 	public List<T> getRange(long userId, int start, int end);

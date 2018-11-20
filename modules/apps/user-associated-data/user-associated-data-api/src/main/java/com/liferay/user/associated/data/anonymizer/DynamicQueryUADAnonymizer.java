@@ -72,9 +72,9 @@ public abstract class DynamicQueryUADAnonymizer<T extends BaseModel>
 
 	/**
 	 * Returns the names identifying fields on the entity of type {@code T} that
-	 * contain a userId.
+	 * contain the primary key of a user.
 	 *
-	 * @return fields that may contain a userId
+	 * @return fields that may contain the primary key of a user
 	 * @review
 	 */
 	protected abstract String[] doGetUserIdFieldNames();
@@ -83,7 +83,8 @@ public abstract class DynamicQueryUADAnonymizer<T extends BaseModel>
 	 * Returns an {@link ActionableDynamicQuery} for type {@code T}. It should
 	 * be populated with criterion and ready for use by the service.
 	 *
-	 * @param userId the userId to pre-filter the {@link ActionableDynamicQuery}
+	 * @param userId the primary key of the user to pre-filter the
+	 * 				 {@link ActionableDynamicQuery}
 	 * @return a pre-filtered {@link ActionableDynamicQuery}
 	 * @review
 	 */
