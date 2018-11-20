@@ -70,8 +70,8 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	}
 
 	/**
-	 * Returns a count of the number of entities of type {@code T} associated
-	 * with the given userId using a {@link DynamicQuery}.
+	 * Returns the number of entities of type {@code T} associated with the
+	 * given userId using a {@link DynamicQuery}.
 	 *
 	 * @param dynamicQuery the dynamicQuery to be passed to the service layer
 	 * @return
@@ -89,7 +89,7 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 	protected abstract DynamicQuery doGetDynamicQuery();
 
 	/**
-	 * Returns a paginated list of entities of type {@code T} associated with a
+	 * Returns entities of type {@code T} in the given range associated with a
 	 * user using a {@link DynamicQuery}.
 	 *
 	 * @param dynamicQuery the dynamicQuery to be passed to the service layer
@@ -102,10 +102,10 @@ public abstract class BaseModelUADDisplay<T extends BaseModel>
 		DynamicQuery dynamicQuery, int start, int end);
 
 	/**
-	 * Returns an array of names identifying fields on the entity of type
-	 * {@code T} that contain a userId.
+	 * Returns names identifying fields on the entity of type {@code T}
+	 * that contain a userId.
 	 *
-	 * @return an array of strings identifying fields that may contain a userId
+	 * @return fields that may contain a userId
 	 * @review
 	 */
 	protected abstract String[] doGetUserIdFieldNames();

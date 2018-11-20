@@ -108,10 +108,10 @@ public abstract class DynamicQueryUADExporter<T extends BaseModel>
 	protected abstract ActionableDynamicQuery doGetActionableDynamicQuery();
 
 	/**
-	 * Returns an array of names identifying fields on the entity of type
-	 * {@code T} that contain a userId.
+	 * Returns names identifying fields on the entity of type {@code T}
+	 * that contain a userId.
 	 *
-	 * @return an array of strings identifying fields that may contain a userId
+	 * @return fields that may contain a userId
 	 * @review
 	 */
 	protected abstract String[] doGetUserIdFieldNames();
