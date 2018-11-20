@@ -24,6 +24,7 @@ import java.io.File;
  * format that can be written to a file and downloaded.
  *
  * @author William Newbury
+ * @review
  */
 public interface UADExporter<T> extends UADComponent<T> {
 
@@ -33,6 +34,7 @@ public interface UADExporter<T> extends UADComponent<T> {
 	 *
 	 * @param userId the userId whose data to count
 	 * @return the number of entities associated with the userId
+	 * @review
 	 */
 	public long count(long userId) throws PortalException;
 
@@ -43,6 +45,7 @@ public interface UADExporter<T> extends UADComponent<T> {
 	 * @param t the entity of type {@code T} to convert into a byte array
 	 * @return a byte array representing the given entity
 	 * @throws PortalException
+	 * @review
 	 */
 	public byte[] export(T t) throws PortalException;
 
@@ -53,6 +56,7 @@ public interface UADExporter<T> extends UADComponent<T> {
 	 * @param userId whose data to export
 	 * @return a {@link File} object containing the exported data
 	 * @throws PortalException
+	 * @review
 	 */
 	public File exportAll(long userId) throws PortalException;
 

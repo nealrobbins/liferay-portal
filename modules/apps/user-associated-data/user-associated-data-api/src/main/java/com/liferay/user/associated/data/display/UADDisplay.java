@@ -30,6 +30,7 @@ import java.util.Map;
  * allow an admin to edit the an entity.
  *
  * @author William Newbury
+ * @review
  */
 public interface UADDisplay<T> extends UADComponent<T> {
 
@@ -39,6 +40,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 *
 	 * @param userId the userId whose data to count
 	 * @return the number of entities associated with the userId
+	 * @review
 	 */
 	public long count(long userId);
 
@@ -48,6 +50,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 * @param primaryKey the primaryKey of the entity to retrieve
 	 * @return an entity of type {@code T}
 	 * @throws Exception
+	 * @review
 	 */
 	public T get(Serializable primaryKey) throws Exception;
 
@@ -56,6 +59,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 * column headers when displaying a list of entities of type {@code T}
 	 *
 	 * @return an array of field names used for column headers
+	 * @review
 	 */
 	public default String[] getColumnFieldNames() {
 		return getDisplayFieldNames();
@@ -66,6 +70,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 * when showing details about an entity of type {@code T}
 	 *
 	 * @return an array of field names identifying which information to display
+	 * @review
 	 */
 	public String[] getDisplayFieldNames();
 
@@ -79,6 +84,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 * @param liferayPortletResponse the current portlet response
 	 * @return a string URL, or {@code null}
 	 * @throws Exception
+	 * @review
 	 */
 	public default String getEditURL(
 			T t, LiferayPortletRequest liferayPortletRequest,
@@ -94,6 +100,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 * @param t the entity of type {@code T}
 	 * @param fieldNames the field names for getting values from the entity
 	 * @return a map of values to be displayed in the UI
+	 * @review
 	 */
 	public Map<String, Object> getFieldValues(T t, String[] fieldNames);
 
@@ -103,6 +110,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 *
 	 * @param t the entity to retrieve the primary key for
 	 * @return the primary key of the entity
+	 * @review
 	 */
 	public Serializable getPrimaryKey(T t);
 
@@ -114,6 +122,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 * @param start the starting index of the result set, for pagination
 	 * @param end the ending index of the result set, for pagination
 	 * @return a paginated list of entities related to the userId
+	 * @review
 	 */
 	public List<T> getRange(long userId, int start, int end);
 
@@ -122,6 +131,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 *
 	 * @param locale the current locale
 	 * @return a localized string representing type {@code T}
+	 * @review
 	 */
 	public String getTypeName(Locale locale);
 
