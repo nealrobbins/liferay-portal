@@ -37,10 +37,10 @@ public interface UADDisplay<T> extends UADComponent<T> {
 
 	/**
 	 * Returns the number of entities of type {@code T} associated with the
-	 * given userId.
+	 * given user ID.
 	 *
-	 * @param userId the userId whose data to count
-	 * @return the number of entities associated with the userId
+	 * @param userId the user ID whose data to count
+	 * @return the number of entities associated with the user ID
 	 * @review
 	 */
 	public long count(long userId);
@@ -120,7 +120,7 @@ public interface UADDisplay<T> extends UADComponent<T> {
 	 *
 	 * @param start the starting index of the result set, for pagination
 	 * @param end the ending index of the result set, for pagination
-	 * @return paginated entities related to the userId
+	 * @return paginated entities related to the user ID
 	 * @review
 	 */
 	public List<T> getRange(long userId, int start, int end);

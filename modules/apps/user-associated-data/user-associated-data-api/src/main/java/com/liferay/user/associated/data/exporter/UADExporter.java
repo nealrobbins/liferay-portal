@@ -30,10 +30,10 @@ public interface UADExporter<T> extends UADComponent<T> {
 
 	/**
 	 * Returns the number of entities of type {@code T} associated with the
-	 * given userId.
+	 * given user ID.
 	 *
-	 * @param userId the userId whose data to count
-	 * @return the number of entities associated with the userId
+	 * @param userId the user ID whose data to count
+	 * @return the number of entities associated with the user ID
 	 * @review
 	 */
 	public long count(long userId) throws PortalException;

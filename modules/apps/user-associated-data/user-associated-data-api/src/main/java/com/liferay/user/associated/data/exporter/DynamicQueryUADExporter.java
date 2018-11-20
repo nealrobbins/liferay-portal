@@ -109,9 +109,9 @@ public abstract class DynamicQueryUADExporter<T extends BaseModel>
 
 	/**
 	 * Returns names identifying fields on the entity of type {@code T}
-	 * that contain a userId.
+	 * that contain a user ID.
 	 *
-	 * @return fields that may contain a userId
+	 * @return fields that may contain a user ID
 	 * @review
 	 */
 	protected abstract String[] doGetUserIdFieldNames();
@@ -124,7 +124,7 @@ public abstract class DynamicQueryUADExporter<T extends BaseModel>
 	 * Returns an {@link ActionableDynamicQuery} for type {@code T}. It should
 	 * be populated with criterion and ready for use by the service.
 	 *
-	 * @param userId the userId to pre-filter the {@link ActionableDynamicQuery}
+	 * @param userId the user ID to pre-filter the {@link ActionableDynamicQuery}
 	 * @return a pre-filtered {@link ActionableDynamicQuery}
 	 * @review
 	 */
@@ -137,7 +137,7 @@ public abstract class DynamicQueryUADExporter<T extends BaseModel>
 	 * Returns a {@link ZipWriter} to write the data to. Each individual entity
 	 * of type {@code T} will be written as a file in the resulting zip file.
 	 *
-	 * @param userId the userId of the user whose data is being exported
+	 * @param userId the user ID of the user whose data is being exported
 	 * @param modelClassName the string representation of the model class name
 	 * @return a {@link ZipWriter} where each piece of data will be written
 	 * @review
