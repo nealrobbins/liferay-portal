@@ -32,8 +32,8 @@ import java.io.File;
 public interface UADExporter<T> extends UADComponent<T> {
 
 	/**
-	 * Returns a count of the number of entities of type {@code T} associated
-	 * with the given userId.
+	 * Returns the number of entities of type {@code T} associated with the
+	 * given userId.
 	 *
 	 * @param userId the userId whose data to count
 	 * @return the number of entities associated with the userId

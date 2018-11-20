@@ -30,6 +30,9 @@ package com.liferay.user.associated.data.component;
 public interface UADComponent<T> {
 
 	/**
+	 * Returns a class representing the type of data the extending components
+	 * are concerned with.
+	 *
 	 * @return the identifying class of type {@code T}
 	 * @review
 	 */

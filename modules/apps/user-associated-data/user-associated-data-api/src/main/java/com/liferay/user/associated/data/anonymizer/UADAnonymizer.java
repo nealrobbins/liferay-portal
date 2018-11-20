@@ -62,8 +62,8 @@ public interface UADAnonymizer<T> extends UADComponent<T> {
 		throws PortalException;
 
 	/**
-	 * Returns a count of the number of entities of type {@code T} associated
-	 * with the given userId.
+	 * Returns the number of entities of type {@code T} associated with the
+	 * given userId.
 	 *
 	 * @param userId the userId whose data to count
 	 * @return the number of entities associated with the userId
