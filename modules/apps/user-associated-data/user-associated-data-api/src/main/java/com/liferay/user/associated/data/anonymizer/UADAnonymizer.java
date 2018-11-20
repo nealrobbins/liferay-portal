@@ -76,6 +76,7 @@ public interface UADAnonymizer<T> extends UADComponent<T> {
 	 *
 	 * @param t the entity to be deleted
 	 * @throws PortalException
+	 * @review
 	 */
 	public void delete(T t) throws PortalException;
 
@@ -85,6 +86,7 @@ public interface UADAnonymizer<T> extends UADComponent<T> {
 	 *
 	 * @param userId the userId whose data to delete
 	 * @throws PortalException
+	 * @review
 	 */
 	public void deleteAll(long userId) throws PortalException;
 

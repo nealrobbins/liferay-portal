@@ -31,6 +31,7 @@ public interface UADComponent<T> {
 
 	/**
 	 * @return the identifying class of type {@code T}
+	 * @review
 	 */
 	public Class<T> getTypeClass();
 
